@@ -1,0 +1,70 @@
+\documentclass[12pt,a4paper,titlepage,twoside]{report}
+\usepackage[T1]{fontenc}
+\usepackage[english, spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage[backend=biber,style=alphabetic,
+sorting=ynt]{biblatex}
+\addbibresource{biblio.bib}
+% http://tug.ctan.org/tex-archive/macros/latex/contrib/fancyhdr/
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\nouppercase \rightmark}
+\fancyhead[LO,RE]{\nouppercase \leftmark}
+\fancyfoot[C]{\thepage}
+
+\newcommand{\Keywords}[1]{\vfill\noindent{\small{\em Palabras clave}: #1}}
+\definecolor{grisclar}{gray}{0.5}
+\definecolor{grisfosc}{gray}{0.25}
+
+% Editar con los datos correspondientes
+\newcommand{\titulo}{Diseño e implementación de un Cluster de virtualización en alta disponibilidad para los servicios de emergencias del Consorcio Provincial de Bomberos de Valencia}
+\newcommand{\titulacion}{Ingeniería en Informática}
+\newcommand{\autor}{María Alexandra Hermosilla Semikina}
+\newcommand{\director}{Alberto Conejero}
+
+\title{\titulo}
+\author{\autor}
+
+\begin{document}
+\input{portada_cas}
+
+\begin{abstract}
+Este proyecto nació a partir de la necesidad de un cluster de virtualización que estuviera en alta disponibilidad para albergar las herramientas que utiliza el Consorcio Provincial de Bomberos de Valencia tanto para los servicios de emergencia como los servicios internos. 
+El Consorcio Provincial de Bomberos de Valencia ha ido aumentando los servicios que presta a nivel interno como a nivel operativo en los servicios de emergencia, consecuentemente es necesario ampliar su infraestructura de virtualización como adaptarse al nuevo hardware que se ha incorporado a la infraestructura ya existente.
+Para ello, se ha construido un cluster de virtualización basado en tecnologías como Xen, corosync y pacemaker.
+
+\Keywords{Virtualización, HA, Alta disponibilidad, Xen, Servicios de emergencia, Cluster, Debian, Linux,Corosync, Pacemaker, ocfs2, Máquina Virtual,GNU}
+\end{abstract}
+
+\tableofcontents
+
+\chapter{Introducción}
+
+\section{Consorcio Provincial de Bomberos de Valencia}
+Durante los años 60, gracias a la expansión económica,la provincia de Valencia sufrió una gran transformación socioeconómica que conllevo a un aumento de población e industrialización.y a su vez, a un mayor. En 1982 se constituyeron los primeros servicios de emergencias en la provincia de Valencia en forma de Consorcios Comarcales
+\section{Servicios de emergencia}
+
+\chapter{Antecedentes}
+\section{Infraestructura previa}
+\section{Servicios prestados}
+
+
+\chapter{Diseño}
+
+\chapter{Implementación}
+
+\chapter{Resultados y conclusiones}
+
+\chapter{Anexos}
+
+\chapter{Bibliografía}
+
+\printbibliography
+
+\end{document}
