@@ -60,7 +60,7 @@ Como se puede apreciar, la virtualización presente una serie de ventajas respec
 \par 
 Todas estas características son las que se busca en una infraestructura donde el número de servicios prestados es alto y han de estar en alta disponibilidad. Este es el caso del Consorcio Provincial de Bomberos de Valencia. Donde el número de servicios de información prestados son elevados y diversos. Algunos de ellos es necesario que estén operativos las 24 del día. 
 \par
-En octubre de 2012 accedí al Consorcio Provincial de Bomberos de Valencia como becaria para realizar las labores de apoyo en las áreas de administración de sistemas y helpdesk. Los primeros meses de la beca se me formó en las tecnologías usadas en la infraestructura utilizada para dar servicio a la sede central y a los diferentes parques que forman el Consorcio. Posteriormente y ante la urgencia de desplegar nuevos servicios, se me asigno al proyecto de la creación de un nuevo cluster de virtualización sobre el hardware Unified Computing System (UCS) de Cisco con cuatro blades modelo B 200 M2.
+En octubre de 2012 accedí al Consorcio Provincial de Bomberos de Valencia como becaria para realizar las labores de apoyo en las áreas de administración de sistemas y helpdesk. Los primeros meses de la beca se me formó en las tecnologías usadas en la infraestructura utilizada para dar servicio a la sede central y a los diferentes parques que forman el Consorcio. Posteriormente y ante la urgencia de desplegar nuevos servicios, se me asigno al proyecto de la creación de un nuevo cluster de virtualización sobre el hardware Unified Computing System (UCS) de Cisco con cuatro blades listos para la instalación y configuración del cluster.
 
 
 \section{Consorcio Provincial de Bomberos de Valencia}
@@ -73,10 +73,11 @@ Actualmente, el Consorcio cubre una superficie de 10.671,48 kilómetros cuadrado
 En todo momento y a lo largo de toda la provincia se encuentran de guardia más de 100 bomberos que son capaces de atender el 81'14 por ciento de los riesgos que presentan las actividades por Incendios, Salvamentos y Prevenciones por Asistencia Técnica, en menos de 10 minutos.Se atiende el 98,03 por ciento si el tiempo de respuesta lo fijamos hasta los 20 minutos.
 El promedio anual de servicios realizados asciende a 14000, pero cada sigue en aumento. Aunque su principal labor consiste en la extinción de incendios urbanos, industriales y forestales, también se realizan rescates de de automovilistas atrapados en accidentes de tráfico que ha ido en aumento a lo largo de los últimos años. 
 \section{Servicios de información que se prestan y su taxonomía}
-En una entidad como el Consorcio es fácil encontrar una gran variedad de servicios que se presten a nivel interno como también de cara al ciudadano. La mayoría de estos servicios prestados se apoyan en el soporte por parte del departamento de informática quien gestiona las herramientas informáticas usadas para proporcionarlos.
+En una entidad como el Consorcio es fácil encontrar una gran variedad de servicios que se presten a nivel interno como también de cara al ciudadano. La mayoría de estos servicios prestados se apoyan en el soporte por parte del departamento de informática quien gestiona las herramientas informáticas usadas.
+%REVISAR LOS SERVICIOS CON EL CATALOGO DE SERVICIOS Y BUSCAR UNA CLASIFICACIÓN
 
 \chapter{Antecedentes}
-El Consorcio cuenta en estos momentos con un personal que asciende a más de 800 personas, entre las cuales no solo se encuentra el personal operativo, sino también de personal administrativo. Cada uno de estos dos grupos de usuarios tienen unos requisitos muy específicos y exigentes. 
+El Consorcio cuenta en estos momentos con un personal que asciende a más de 800 personas, entre las cuales no solo se encuentra el personal operativo, sino también de personal administrativo. Cada uno de estos dos grupos de usuarios requiere de herramientas diferentes y especializadas para su labor. 
 \par
 Para el personal operativo es necesario que los servicios usados para su labor estén operativos siempre y poder acceder a ellos en cualquier momento y lugar. Por una parte, el Consorcio es el responsable de recibir los servicios solicitados por parte del 112 de la Generalitat Valenciana que requieran la intervención de los bomberos. Sin embargo, esta parte esta gestionada por parte del propio 112 GVA. Para la gestión del servicio a prestar sí se usa un software propio que esta gestionado internamente. Este servicio es usado no solo por parte de los operadores, sino que también por parte de todo el personal operativo. Esto quiere decir que tiene que estar disponible desde cualquier parque de bomberos de la provincia de Valencia, incluyendo los parques de voluntarios.
 \par
@@ -89,7 +90,7 @@ incluir diagramas
 \chapter{Resumen de alternativas y criterios de selección}
 \section{Criterios de selección}
 \section{Proxmox}
-La empresa Proxmox Server Solutions GmbH es un proyecto que se inició en 2005, pero su producto principal, el entorno de virtualización, no empezó hasta el año 2008. Este entorno utiliza dos tecnologías diferentes de virtualización. La primera, enfocada para los sistemas GNU/Linux, basada en OpenVZ. OpenVZ se basa en contenedores que permite ejecutar múltiples instancias del mismo sistema operativo aislados denominados Servidores Privados Virtuales (VPS, siglas en inglés). Cada contenedor tiene sus propias archivos y aplicaciones, usuarios y dispositivosTodos estos contenedores comparten el mismo kernel
+La empresa Proxmox Server Solutions GmbH es un proyecto que se inició en 2005, pero su producto principal, el entorno de virtualización, no empezó hasta el año 2008. Este entorno utiliza dos tecnologías diferentes de virtualización. La primera, enfocada para los sistemas GNU/Linux, basada en OpenVZ. OpenVZ se basa en contenedores que permite ejecutar múltiples instancias del mismo sistema operativo aislados denominados Servidores Privados Virtuales (VPS, siglas en inglés). Cada contenedor tiene sus propias archivos y aplicaciones, usuarios y dispositivos. Todos estos contenedores comparten el mismo kernel
 \section{CloudStack}
 \section{OpenStack}
 \section{VMware vSphere}
@@ -98,7 +99,7 @@ La empresa Proxmox Server Solutions GmbH es un proyecto que se inició en 2005, 
 \chapter{Implementación de la solución seleccionada}
 Introducción de cómo se realizo
 diagrama de flujo
-Separar en pasos y resolución de las problematicas aparecidas
+Separar en pasos y resolución de las problemáticas aparecidas
 \chapter{Resultados y conclusiones}
 Posibles mejoras
 Posibles lineas de investigación
