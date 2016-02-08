@@ -171,7 +171,7 @@ A nivel de funcionamiento de estas máquinas virtuales, es necesario que 4 de el
 Para la nueva solución es necesario definir los requisitos para una completa integración con la infraestructura.
 \begin{itemize}
 %Revisar el primer punto
-    \item Debe ser compatible con la infraestructura de Cisco UCS, los blades modelo B200M y los Factor Interconnect.
+    \item Debe ser compatible con la infraestructura de Cisco UCS, los blades modelo B200M y los Fabric Interconnect.
     \item Es necesario que el almacenamiento sea distribuido por SCSI y compartido entre todos los hypervisores. Por una parte, habrá un almacenamiento desde el cual se servirán las máquinas virtuales y, por otra parte, cada máquina es posible que requiera de un almacenamiento adicional para su uso.
     \item No debe suponer un problema la migración de las máquinas virtuales desde la vieja plataforma a la nueva.
     \item Los nodos Hypervisores deben servir las máquinas en alta disponibilidad. Esto quiere decir que si uno de los nodos cae, el resto asume sus máquinas virtuales y no se interrumpen los servicios prestados por el nodo caído.
@@ -226,11 +226,16 @@ server 192.168.200.1
 \begin{verbatim}
 	service ntp restart
 \end{verbatim}
-\par Este paso es trivial, sin embargo, de una importancia crucial. Los cuatro hypervisores estarán en constante comunicación para conocer el estado de sus ``compañeros`` y el de las máquinas virtuales por lo que un desfase en el tiempo puede hacer que un hypervisor este muerto al percibir una respuesta fuera de hora.
+\par Este paso es trivial, sin embargo, de una importancia crucial. Los cuatro hypervisores estarán en constante comunicación para conocer el estado de sus compañeros y el de las máquinas virtuales por lo que un desfase en el tiempo puede hacer que un hypervisor este muerto al percibir una respuesta fuera de hora.
 \section{Instalación del hypervisor Xen}
+\begin{verbatim}
+	apt install xen-linux-system xen-tools
+\end{verbatim}
+
 \section{Configuración de la las interfaces y las VLANs}
 \section{Instalación y configuración de OpenSwitch}
 \section{Instalación del multipath}
+\section{Instalación de Corosync y Pacemaker}
 
 %Separar en pasos y resolución de las problemáticas aparecidas
 \chapter{Resultados y conclusiones}
