@@ -211,22 +211,22 @@ Esta solución en la fase de análisis se descarta de inmediato. El motivo de su
 El sistema operativo seleccionado como base ha sido GNU/Debian en su versión estable, la cual, se encontraba en un su release Wheezy, versión 7.3. Es una instalación básica, pero es necesario hacer algunas matizaciones respecto a algunos pasos.
 \begin{itemize}
 	\item El idioma seleccionada ha sido el inglés para facilitar la depuración de los errores que vayan surgiendo a lo largo de la configuración y mantenimiento del cluster.
-	\item Durante la configuración de la red, se escoge la configuración estática ya que son servidores y necesitamos tener una IP fija y conocida por los administradores, a través de ellas, se realizará el resto de la instalación del resto de componentes del cluster de virtualización. A cada hypervisor se le ha asignado las ips 192.168.200.23,192.168.200.24,192.168.200.25 y 192.168.200.26 de la red de mantenimiento. Como nombres del servidor se han escogido algo trivial como es hype1,hype2,hype3 y hype4.
+	\item Durante la configuración de la red, se escoge la configuración estática ya que son servidores y necesitamos tener una IP fija y conocida por los administradores, a través de ellas, se realizará el resto de la instalación del resto de componentes del cluster de virtualización. A cada hypervisor se le ha asignado las ips \verb|192.168.200.23|, \verb|192.168.200.24|, \verb|192.168.200.25| y \verb|192.168.200.26| de la red de mantenimiento. Como nombres del servidor se han escogido algo trivial como es \verb|hype1|,\verb|hype2|,\verb|hype3| y \verb|hype4|.
 	\item Se han preparado los discos duros con dos particiones, una para el sistema raiz y una swap. En este caso no es necesario un espacio especifico para el usuario ya que no existe o solo es simbólico. La mayoria de las acciones que se van a realizar se realizarán con los permisos del superusuario, \textit{root}. El acceso se realiza mediante las claves publicas de los usuarios que administrarán los servidores, con lo cual la contraseña no es usada.
-	\item Tras la instalación del sistema base se han escogido algunas aplicaciones, como es el servidor ssh para el acceso remoto y las utilidades de sistema básicas.
+	\item Tras la instalación del sistema base se han escogido algunas aplicaciones, como es el servidor \verb|ssh| para el acceso remoto y las utilidades de sistema básicas.
 \end{itemize}
 \section{Instalación y configuración del cliente NTP}
-Este paso se realiza en todos los hypervisores por igual. Con este componente conseguimos que los cuatro servidores esten sincronizados a la misma hora ya que los cuatro apuntan a un servidor interno de ntp.
-\begin{lstlisting}
+Este paso se realiza en todos los hypervisores por igual. Con este componente conseguimos que los cuatro servidores estén sincronizados a la misma hora ya que los cuatro apuntan a un servidor interno de ntp.
+\begin{verbatim}
 apt install ntpdate
 vim /etc/ntp.conf:
 server 192.168.200.1
-\end{lstlisting}
-Tras modificar el fichero \verb|/etc/ntp.conf| se reinicia el servicio de ntp.
-\begin{lstlisting}
+\end{verbatim}
+\par Tras modificar el fichero \verb|/etc/ntp.conf| se reinicia el servicio de ntp.
+\begin{verbatim}
 	service ntp restart
-\end{lstlisting}
-Este paso es trivial, sin embargo, de una importancia crucial. Los cuatro hypervisores estarán en constante comunicación para conocer el estado de sus "compañeros" y el de las máquinas virtuales por lo que un desfase en el tiempo puede hacer que un hypervisor esta muerto al percibir una respueta fuera de hora.
+\end{verbatim}
+\par Este paso es trivial, sin embargo, de una importancia crucial. Los cuatro hypervisores estarán en constante comunicación para conocer el estado de sus ``compañeros`` y el de las máquinas virtuales por lo que un desfase en el tiempo puede hacer que un hypervisor este muerto al percibir una respuesta fuera de hora.
 \section{Instalación del hypervisor Xen}
 \section{Configuración de la las interfaces y las VLANs}
 \section{Instalación y configuración de OpenSwitch}
