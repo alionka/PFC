@@ -208,7 +208,13 @@ Esta solución en la fase de análisis se descarta de inmediato. El motivo de su
 \par A lo largo de este capítulo se explicará el proceso que se ha seguido para la instalación y configuración del los hypervisores. Los cuatro hypervisores son idénticos, por lo que solo se explicará las diferencias entre ellos. 
 \par Para preservar la seguridad de la entidad, los datos expuestos aquí no son reales.
 \section{Instalación del sistema operativo}
-El sistema operativo seleccionado como base ha sido GNU/Debian en su versión estable, la cual, se encontraba en un su release Wheezy, versión 7. Es una instalaci
+El sistema operativo seleccionado como base ha sido GNU/Debian en su versión estable, la cual, se encontraba en un su release Wheezy, versión 7. Es una instalación básica, pero es necesario hacer algunas matizaciones respecto a algunos pasos.
+\begin{itemize}
+	\item El idioma seleccionada ha sido el inglés para facilitar la depuración de los errores que vayan surgiendo a lo largo de la configuración y mantenimiento del cluster.
+	\item Durante la configuración de la red, se escoge la configuración estática ya que son servidores y necesitamos tener una IP fija y conocida por los administradores. A cada hypervisor se le ha asignado las ips 192.168.200.23,192.168.200.24,192.168.200.25 y 192.168.200.26 de la red de mantenimiento. Como nombres del servidor se han escogido algo trivial como es hype1,hype2,hype3 y hype4.
+	\item Se han preparado los discos duros con dos particiones, una para el sistema raiz y una swap. En este caso no es necesario un espacio especifico para el usuario ya que no existe o solo es simbólico. La mayoria de las acciones que se van a realizar se realizarán con los permisos del superusuario, \textit{root}. El acceso se realiza mediante las claves publicas de los usuarios que administrarán los servidores, con lo cual la contraseña no es usada.
+	\item Tras la instalación del sistema base se han escogido algunas aplicaciones, como es el servidor ssh para el acceso remoto y las utilidades de sistema básicas.
+\end{itemize}
 \section{Instalación y configuración del cliente NTP}
 \section{Instalación del hypervisor Xen}
 \section{Configuración de la las interfaces y las VLANs}
